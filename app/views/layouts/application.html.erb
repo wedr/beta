@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dvoracek - webdesigner</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application", :media => "all"%>
+  <%= csrf_meta_tags %>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+$(function(){
+   $('. carousel').carousel();
+});
+
+  $(function() {
+    $('textarea').tinymce({
+      theme: 'advanced'
+    });
+  });
+</script>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <%= (link_to (image_tag "logo.png"), root_path) %>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><a href="/">O mně</a></li>
+        <li><%= link_to "Reference", post_path %></li>
+        <li><%= link_to "Služby", sluzby_path %></li>
+        <li><a href="/">Kontakt</a>
+        <li><%= link_to "Blog", blog_path %></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <%= yield %>
+<div id="nav">
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Logout", :logout %>
+    <% else %>
+      <%= link_to "Register", new_user_path %> |
+      <%= link_to "Login", :login %>
+    <% end %>
+  </div>
+  <div>
+    <p id="notice"><%= notice %></p>
+    <p id="alert"><%= alert %></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @sluzby.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @sluzby.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_sluzby_path(@sluzby) %> |
+<%= link_to 'Back', sluzbies_path %>

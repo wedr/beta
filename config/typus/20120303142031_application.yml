@@ -1,0 +1,24 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Post:
+  fields:
+    default: title, content, photo_file_name, image
+    form: title, content, photo_file_name, image
+  order_by: 
+  relationships: 
+  filters: created_at
+  search: title
+  application: beta
+
+User:
+  fields:
+    default: email
+    form: email, password_hash
+  order_by: 
+  relationships: 
+  filters: created_at
+  search: 
+  application: beta
+

@@ -1,0 +1,18 @@
+<div class="blog">
+
+    <div class="blog-left">
+        <% @blogs.each do |blog| %>
+          <div class="blog-content">
+            <%= link_to(image_tag(blog.photo.url), blog) =%>
+            <h2><%= link_to  blog.title, blog %></h2>
+            <p class="date"><%= time_tag blog.created_at %></p>
+            <p><%= truncate(blog.content, :length => 450, :omission => ".....") %></p>
+          </div>
+        <% end %>
+    </div>
+    <div class="clear"></div>
+    <div class="blog-right">
+
+    </div>
+
+</div>

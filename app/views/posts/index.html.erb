@@ -1,0 +1,18 @@
+<h1 class="ref-h1">Reference</h1>
+<p class="ref-p"> Veškeré práce které jsem vytvořil od roku 2010. Po kliknutí na název se vám zobrazí podrobný popis práce, zadání a dalších informací.</p>
+
+     <% @posts.each do |post| %>
+
+<div class="ref">
+
+        <div class="ref-image">
+        <%= link_to(image_tag(post.photo.url), post) =%>
+        </div>
+        <div class="ref-head">
+        <%= link_to post.title, post  %>
+        </div>
+</div>
+
+<% end %>
+
+

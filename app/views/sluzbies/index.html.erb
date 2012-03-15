@@ -1,0 +1,7 @@
+
+<% @sluzbies.each do |sluzby| %>
+<%= link_to(image_tag(sluzby.photo.url), sluzby) =%>
+<%= sluzby.title %>
+<%= sluzby.content %>
+
+<% end %>

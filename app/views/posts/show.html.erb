@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div class="ref-show">
+  <div class="ref-img">
+    <%= image_tag @post.photo.url %>
+  </div>
+
+  <div class="ref-popis">
+
+    <div class="ref-nad">
+    <h1><%= @post.title %></h1>
+    <div><p><%= @post.tags.map { |t| t.name }.join(" - ") %></p></div>
+
+    <div class="clear"></div>
+    </div>
+
+    <hr>
+
+    <p class="ref-ano">
+        <%= @post.content %>
+    </p>
+
+  </div>
+
+</div>
